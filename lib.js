@@ -10,7 +10,11 @@ class Library  {
     }
     issueBooks(book) {
         let foundBook = this.books.find(b => b.title == book)
-        return foundBook ? this.books.pop() : 'book not found';
+        return foundBook ? foundBook.quantity-- : 'book not found';
+    }
+    returnBooks(book) {
+        let foundBook = this.books.find(b => b.title == book)
+        return foundBook ? foundBook.quantity++ : 'wrong library four-eyes';
     }
 }
 
